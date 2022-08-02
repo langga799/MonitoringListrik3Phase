@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.monitoringlistrik3phase.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.monitoringlistrik3phase.ui.history.HistoryFragment"
+        android:label="@string/history"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.monitoringlistrik3phase.ui.setting.SettingFragment"
+        android:label="@string/setting"
+        tools:layout="@layout/fragment_setting">
+
+        <action
+            android:id="@+id/action_navigation_setting_to_aturPengingatFragment"
+            app:destination="@id/aturPengingatFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_navigation_setting_to_notifikasiFragment"
+            app:destination="@id/notifikasiFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_navigation_setting_to_bantuanFragment"
+            app:destination="@id/bantuanFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/aturPengingatFragment"
+        android:name="com.example.monitoringlistrik3phase.ui.setting.aturpengingat.AturPengingatFragment"
+        android:label="fragment_atur_pengingat"
+        tools:layout="@layout/fragment_atur_pengingat">
+
+        <action
+            android:id="@+id/action_aturPengingatFragment_to_navigation_setting"
+            app:destination="@id/navigation_setting"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_setting" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/notifikasiFragment"
+        android:name="com.example.monitoringlistrik3phase.ui.setting.notifikasi.NotifikasiFragment"
+        android:label="fragment_notifikasi"
+        tools:layout="@layout/fragment_notifikasi">
+
+        <action
+            android:id="@+id/action_notifikasiFragment_to_navigation_setting"
+            app:destination="@id/navigation_setting"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_setting" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/bantuanFragment"
+        android:name="com.example.monitoringlistrik3phase.ui.setting.bantuan.BantuanFragment"
+        android:label="fragment_bantuan"
+        tools:layout="@layout/fragment_bantuan">
+
+        <action
+            android:id="@+id/action_bantuanFragment_to_navigation_setting"
+            app:destination="@id/navigation_setting"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_setting" />
+    </fragment>
+</navigation>

@@ -1,0 +1,1 @@
+package com.example.monitoringlistrik3phase.service.modeldata class PushNotification(    val data: NotificationData,    val to: String,)

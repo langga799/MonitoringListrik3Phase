@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Monitoring Listrik 3 Phase</string>
+    <string name="title_activity_dashboard">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="history">History</string>
+    <string name="setting">Setting</string>
+    <string name="aplikasi_monitoring_arus_beban_pada_sistem_3_fasa">Aplikasi Monitoring Arus Beban Pada Sistem 3 Fasa</string>
+    <string name="donna">Donna</string>
+    <string name="persentase">Persentase</string>
+    <string name="monitoring">Monitoring</string>
+    <string name="keterangan">Keterangan :</string>
+    <string name="ampere">Ampere (A)</string>
+    <string name="tegangan">Tegangan (V)</string>
+    <string name="daya">Daya (W)</string>
+    <string name="_100">100%</string>
+    <string name="stabil">Stabil</string>
+    <string name="tidak_stabil">Tidak Stabil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pengaturan">Pengaturan</string>
+    <string name="hodup_matikan_pengingat_agar_mengetahui_waktu_pemantauan">Hidup/matikan pengingat agar mengetahui waktu pemantauan</string>
+    <string name="pesan_terbaru_bila_terjadi_ketidakseimbangan_arus_listrik_pada_arus_tegangan_dan_daya">Pesan terbaru bila terjadi ketidakseimbangan arus listrik pada arus, tegangan, dan daya</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="pusat_bantuan_hubungi_kami">Pusat bantuan, hubungi kami</string>
+    <string name="bantuan">Bantuan</string>
+    <string name="atur_pengingat">Atur Pengingat</string>
+    <string name="hubungi_kami">Hubungi Kami</string>
+    <string name="tekan_untuk_mengaktifkan_atau_menonaktifkan_pengingat">Tekan untuk mengaktifkan atau menonaktifkan pengingat</string>
+    <string name="terjadi_ketidakstabilan_arus_listrik">Terjadi ketidakstabilan arus listrik</string>
+    <string name="monitoring_listrik">Monitoring Listrik</string>
+    <string name="fasa_3">Fasa 3 (T)</string>
+    <string name="fasa_2">Fasa 2 (S)</string>
+    <string name="fasa_1">Fasa 1 (R)</string>
+</resources>

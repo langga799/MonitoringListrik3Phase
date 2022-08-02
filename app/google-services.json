@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "904227081524",
+    "firebase_url": "https://monitoring-listrik-3fasa-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "monitoring-listrik-3fasa",
+    "storage_bucket": "monitoring-listrik-3fasa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904227081524:android:cea9553d4da53cd04e6961",
+        "android_client_info": {
+          "package_name": "com.example.monitoringlistrik3phase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904227081524-c8d6u0p60nr3vhg93kgf5nbrff80llmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5nqcYs2-yo4DTA_0gLXXFfa-b1r-FH6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904227081524-c8d6u0p60nr3vhg93kgf5nbrff80llmp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

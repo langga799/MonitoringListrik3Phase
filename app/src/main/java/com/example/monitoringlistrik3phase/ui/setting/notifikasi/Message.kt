@@ -1,0 +1,1 @@
+package com.example.monitoringlistrik3phase.ui.setting.notifikasidata class Message(    val data: List<ItemMessage>,)data class ItemMessage(    val title: String,    val body: String,    val time: String,)
