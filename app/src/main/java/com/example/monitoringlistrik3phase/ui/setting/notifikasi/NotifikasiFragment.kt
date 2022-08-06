@@ -51,7 +51,8 @@ class NotifikasiFragment : Fragment() {
             Log.d("Fungsi ini dijalankan", "Coroutine")
             binding.loadingInMessage.visible()
             messageAdapter.clear()
-            firestore.collection("message").orderBy("time", Query.Direction.DESCENDING)
+            firestore.collection("message")
+                .orderBy("time", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener { data ->
                     binding.loadingInMessage.inVisible()
@@ -62,22 +63,30 @@ class NotifikasiFragment : Fragment() {
                         val body = doc.get("body") as String
                         val time = doc.get("time") as String
 
-                        messageAdapter.addAll(arrayListOf(ItemMessage(title, body, time)))
+                        messageAdapter.addAll(
+                            arrayListOf(
+                                ItemMessage(
+                                    title,
+                                    body,
+                                    time
+                                )
+                            )
+                        )
                     }
                 }
         }
 
 
-       // Log.d("messsage", messageAdapter.ad.toString())
+
 
         // =========================================================================================
-
 
 
         swipe = binding.swipeRefresh
         swipe.setOnRefreshListener {
 
-            firestore.collection("message").orderBy("time", Query.Direction.DESCENDING)
+            firestore.collection("message")
+                .orderBy("time", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener { data ->
                     messageAdapter.clear()
@@ -89,13 +98,22 @@ class NotifikasiFragment : Fragment() {
                         val title = doc.get("title") as String
                         val body = doc.get("body") as String
                         val time = doc.get("time") as String
-                        messageAdapter.addAll(arrayListOf(ItemMessage(title, body, time)))
+
+                        messageAdapter.addAll(
+                            arrayListOf(
+                                ItemMessage(
+                                    title,
+                                    body,
+                                    time
+                                )
+                            )
+                        )
 
                     }
 
 
                 }
-           // messageAdapter.clear()
+
         }
 
         setupRecyclerView()

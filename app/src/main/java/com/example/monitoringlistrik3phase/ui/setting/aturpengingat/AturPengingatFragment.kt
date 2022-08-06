@@ -29,13 +29,16 @@ class AturPengingatFragment : Fragment() {
     private var _binding: FragmentAturPengingatBinding? = null
     private val binding get() = _binding
 
+
     companion object {
         private const val TAG = "Atur Pengingat Fragment"
         private const val TOPIC = "/topics/Listrik"
     }
 
+
     private lateinit var preference: SharedPreference
     private var token = ""
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +48,7 @@ class AturPengingatFragment : Fragment() {
         _binding = FragmentAturPengingatBinding.inflate(layoutInflater, container, false)
         return binding?.root
     }
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -36,11 +36,11 @@ class BantuanFragment : Fragment() {
 
         binding.btnHubungiKami.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            val noTelp = "6281334112291"
+            val noTelp = "6287853032923"
             val encodedText = URLEncoder.encode("Tuliskan pesan Anda", "UTF-8")
+
             intent.data = Uri.parse("https://api.whatsapp.com/send?phone=$noTelp&text=$encodedText")
             startActivity(intent)
-
         }
     }
 

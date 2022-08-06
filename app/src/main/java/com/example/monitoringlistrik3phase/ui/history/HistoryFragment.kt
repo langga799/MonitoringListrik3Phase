@@ -18,7 +18,7 @@ import com.google.firebase.firestore.Query
 class HistoryFragment : Fragment() {
 
     private var _binding: FragmentHistoryBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
 
     private lateinit var firestore: FirebaseFirestore
     private var history =  ArrayList<HistoryModel>()
@@ -27,9 +27,9 @@ class HistoryFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View {
+    ): View? {
         _binding = FragmentHistoryBinding.inflate(inflater, container, false)
-        return binding.root
+        return binding?.root
 
 
     }
@@ -39,11 +39,12 @@ class HistoryFragment : Fragment() {
 
         firestore = FirebaseFirestore.getInstance()
 
-        binding.loadingInHistory.visible()
-        firestore.collection("history").orderBy("date", Query.Direction.DESCENDING)
+        binding?.loadingInHistory?.visible()
+        firestore.collection("history")
+            .orderBy("date", Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener { data ->
-                binding.loadingInHistory.inVisible()
+                binding?.loadingInHistory?.inVisible()
                 for (doc in data.documents){
                     Log.d("doc-message", doc.toString())
 
@@ -66,7 +67,7 @@ class HistoryFragment : Fragment() {
 
     private fun setupRecyclerView(){
         val adapter = HistoryAdapter(history)
-        binding.apply {
+        binding?.apply {
             rvHistory.adapter = adapter
             rvHistory.layoutManager = LinearLayoutManager(requireActivity())
             rvHistory.setHasFixedSize(true)

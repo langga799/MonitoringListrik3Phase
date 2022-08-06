@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.monitoringlistrik3phase.databinding.FragmentHomeBinding
 import com.google.firebase.database.DataSnapshot
@@ -44,7 +43,7 @@ class HomeFragment : Fragment() {
     private fun getDataPersentase() {
         databaseReference.apply {
 
-            // ==================================== Ampere =========================================
+// =========================================== Ampere ==============================================
             child("listrik").child("ampere").child("ampere-fasa-1")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
@@ -92,10 +91,10 @@ class HomeFragment : Fragment() {
                     }
 
                 })
-            // =====================================================================================
+// =================================================================================================
 
 
-            // ====================================== Daya =========================================
+// =========================================== Daya ================================================
             child("listrik").child("daya").child("daya-fasa-1")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
@@ -143,10 +142,10 @@ class HomeFragment : Fragment() {
                     }
 
                 })
-            // =====================================================================================
+// =================================================================================================
 
 
-            // ===================================== Tegangan ======================================
+// ========================================= Tegangan ==============================================
             child("listrik").child("tegangan").child("tegangan-fasa-1")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
@@ -196,12 +195,13 @@ class HomeFragment : Fragment() {
 
                 })
 
-            // =====================================================================================
+// =================================================================================================
 
         }
     }
 
 
+    // ================================= Persentase Ketidakseimbangan ==================================
     private fun getPersentaseKetidakSeimbangan() {
         databaseReference.apply {
 
@@ -254,7 +254,7 @@ class HomeFragment : Fragment() {
 
                 })
 
-
+// =================================================================================================
         }
     }
 
