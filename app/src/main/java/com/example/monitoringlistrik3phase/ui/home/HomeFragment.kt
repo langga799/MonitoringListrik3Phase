@@ -16,7 +16,7 @@ import com.google.firebase.ktx.Firebase
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
 
     private lateinit var databaseReference: DatabaseReference
 
@@ -24,9 +24,9 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View {
+    ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
             child("listrik").child("ampere").child("ampere-fasa-1")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
                                 tvAmpere1.text = this.value.toString().plus(" %")
                             }
@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
             child("listrik").child("ampere").child("ampere-fasa-2")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
                                 tvAmpere2.text = this.value.toString().plus(" %")
                             }
@@ -79,7 +79,7 @@ class HomeFragment : Fragment() {
             child("listrik").child("ampere").child("ampere-fasa-3")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
                                 tvAmpere3.text = this.value.toString().plus(" %")
                             }
@@ -98,7 +98,7 @@ class HomeFragment : Fragment() {
             child("listrik").child("daya").child("daya-fasa-1")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
                                 tvDaya1.text = this.value.toString().plus(" %")
                             }
@@ -114,7 +114,7 @@ class HomeFragment : Fragment() {
             child("listrik").child("daya").child("daya-fasa-2")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
                                 tvDaya2.text = this.value.toString().plus(" %")
                             }
@@ -130,7 +130,7 @@ class HomeFragment : Fragment() {
             child("listrik").child("daya").child("daya-fasa-3")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
                                 tvDaya3.text = this.value.toString().plus(" %")
                             }
@@ -149,7 +149,7 @@ class HomeFragment : Fragment() {
             child("listrik").child("tegangan").child("tegangan-fasa-1")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
                                 tvTegangan1.text = this.value.toString().plus(" %")
                             }
@@ -165,7 +165,7 @@ class HomeFragment : Fragment() {
             child("listrik").child("tegangan").child("tegangan-fasa-2")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
                                 tvTegangan2.text = this.value.toString().plus(" %")
                             }
@@ -181,7 +181,7 @@ class HomeFragment : Fragment() {
             child("listrik").child("tegangan").child("tegangan-fasa-3")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
                                 tvTegangan3.text = this.value.toString().plus(" %")
                             }
@@ -208,9 +208,9 @@ class HomeFragment : Fragment() {
             child("persentase_ketidakseimbangan").child("fasa-1-R")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
-                                binding.progressFasa1R.setProgress(value.toString().toInt())
+                                binding?.progressFasa1R?.setProgress(value.toString().toInt())
                             }
                         }
                     }
@@ -224,9 +224,9 @@ class HomeFragment : Fragment() {
             child("persentase_ketidakseimbangan").child("fasa-2-S")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
-                                binding.progressFasa2S.setProgress(value.toString().toInt())
+                                binding?.progressFasa2S?.setProgress(value.toString().toInt())
                             }
                         }
                     }
@@ -240,9 +240,9 @@ class HomeFragment : Fragment() {
             child("persentase_ketidakseimbangan").child("fasa-3-T")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        binding.apply {
+                        binding?.apply {
                             snapshot.apply {
-                                binding.progressFasa3T.setProgress(value.toString().toInt())
+                                binding?.progressFasa3T?.setProgress(value.toString().toInt())
                             }
                         }
                     }

@@ -1,1 +1,1 @@
-package com.example.monitoringlistrik3phase.ui.historyclass HistoryModel(    val date: String,    val fasa1: String,    val fasa2: String,    val fasa3: String,    val persentase1: String,    val persentase2: String,    val persentase3: String,)
+package com.example.monitoringlistrik3phase.ui.historyclass HistoryModel(    val date: String,    val ampere: String,    val tegangan: String,    val daya: String,    val listrik: String,    val persentase: String)

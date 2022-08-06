@@ -5,13 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.monitoringlistrik3phase.databinding.FragmentHistoryBinding
 import com.example.monitoringlistrik3phase.helper.inVisible
 import com.example.monitoringlistrik3phase.helper.visible
-import com.example.monitoringlistrik3phase.ui.setting.notifikasi.ItemMessage
-import com.example.monitoringlistrik3phase.ui.setting.notifikasi.MessageAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
@@ -21,7 +20,7 @@ class HistoryFragment : Fragment() {
     private val binding get() = _binding
 
     private lateinit var firestore: FirebaseFirestore
-    private var history =  ArrayList<HistoryModel>()
+    private var history = ArrayList<HistoryModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,18 +44,29 @@ class HistoryFragment : Fragment() {
             .get()
             .addOnSuccessListener { data ->
                 binding?.loadingInHistory?.inVisible()
-                for (doc in data.documents){
+                for (doc in data.documents) {
                     Log.d("doc-message", doc.toString())
 
                     val date = doc.get("date") as String
-                    val fasa1 = doc.get("fasa1") as String
-                    val fasa2 = doc.get("fasa2") as String
-                    val fasa3 = doc.get("fasa3") as String
-                    val persentase1 = doc.get("persentase1") as String
-                    val persentase2 = doc.get("persentase2") as String
-                    val persentase3 = doc.get("persentase3") as String
+                    val ampere = doc.get("ampere_status") as String
+                    val tegangan = doc.get("tegangan_status") as String
+                    val daya = doc.get("daya_status") as String
+                    val listrik = doc.get("listrik") as String
+                    val persentase = doc.get("persentase") as String
 
-                    history.addAll(listOf(HistoryModel(date, fasa1, fasa2, fasa3, persentase1, persentase2, persentase3)))
+
+                    history.addAll(
+                        listOf(
+                            HistoryModel(
+                                date,
+                                ampere,
+                                tegangan,
+                                daya,
+                                listrik,
+                                persentase
+                            )
+                        )
+                    )
                 }
 
                 setupRecyclerView()
@@ -65,12 +75,18 @@ class HistoryFragment : Fragment() {
     }
 
 
-    private fun setupRecyclerView(){
+    private fun setupRecyclerView() {
         val adapter = HistoryAdapter(history)
         binding?.apply {
             rvHistory.adapter = adapter
             rvHistory.layoutManager = LinearLayoutManager(requireActivity())
             rvHistory.setHasFixedSize(true)
+        }
+
+        if (adapter.itemCount == 0){
+            binding?.status?.visible()
+        } else {
+            binding?.status?.inVisible()
         }
     }
 
