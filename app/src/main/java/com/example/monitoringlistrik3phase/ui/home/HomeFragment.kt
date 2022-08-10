@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvAmpere1.text = this.value.toString().plus(" %")
+                                tvAmpere1.text = this.value.toString().plus(" A")
                             }
                         }
                     }
@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvAmpere2.text = this.value.toString().plus(" %")
+                                tvAmpere2.text = this.value.toString().plus(" V")
                             }
                         }
                     }
@@ -81,7 +81,7 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvAmpere3.text = this.value.toString().plus(" %")
+                                tvAmpere3.text = this.value.toString().plus(" W")
                             }
                         }
                     }
@@ -100,7 +100,7 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvDaya1.text = this.value.toString().plus(" %")
+                                tvDaya1.text = this.value.toString().plus(" A")
                             }
                         }
                     }
@@ -116,7 +116,7 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvDaya2.text = this.value.toString().plus(" %")
+                                tvDaya2.text = this.value.toString().plus(" V")
                             }
                         }
                     }
@@ -132,7 +132,7 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvDaya3.text = this.value.toString().plus(" %")
+                                tvDaya3.text = this.value.toString().plus(" W")
                             }
                         }
                     }
@@ -151,7 +151,7 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvTegangan1.text = this.value.toString().plus(" %")
+                                tvTegangan1.text = this.value.toString().plus(" A")
                             }
                         }
                     }
@@ -167,7 +167,7 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvTegangan2.text = this.value.toString().plus(" %")
+                                tvTegangan2.text = this.value.toString().plus(" V")
                             }
                         }
                     }
@@ -183,7 +183,7 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvTegangan3.text = this.value.toString().plus(" %")
+                                tvTegangan3.text = this.value.toString().plus(" W")
                             }
                         }
 
