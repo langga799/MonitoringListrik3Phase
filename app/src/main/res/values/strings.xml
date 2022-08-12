@@ -14,7 +14,7 @@
     <string name="ampere">Ampere (A)</string>
     <string name="tegangan">Tegangan (V)</string>
     <string name="daya">Daya (W)</string>
-    <string name="_100">100%</string>
+    <string name="_100">0</string>
     <string name="stabil">Stabil</string>
     <string name="tidak_stabil">Tidak Stabil</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -33,4 +33,6 @@
     <string name="fasa_3">Fasa 3 (T)</string>
     <string name="fasa_2">Fasa 2 (S)</string>
     <string name="fasa_1">Fasa 1 (R)</string>
+    <string name="_3_fasa_rst">3 Fasa (R S T)</string>
+    <string name="persentase_ketidakseimbangan">Persentase Ketidakseimbangan</string>
 </resources>
