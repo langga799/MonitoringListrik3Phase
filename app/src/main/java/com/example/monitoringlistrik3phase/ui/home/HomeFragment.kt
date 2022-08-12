@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import java.text.DecimalFormat
 
 class HomeFragment : Fragment() {
 
@@ -49,7 +50,8 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvAmpere1.text = this.value.toString().plus(" A")
+                                val decimalFormat = "%.2f".format(snapshot.value.toString().toDouble())
+                                tvAmpere1.text = decimalFormat
                             }
                         }
                     }
@@ -65,7 +67,8 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvAmpere2.text = this.value.toString().plus(" V")
+                                val decimalFormat = "%.2f".format(snapshot.value.toString().toDouble())
+                                tvAmpere2.text = decimalFormat
                             }
                         }
                     }
@@ -81,7 +84,8 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvAmpere3.text = this.value.toString().plus(" W")
+                                val decimalFormat = "%.2f".format(snapshot.value.toString().toDouble())
+                                tvAmpere3.text = decimalFormat
                             }
                         }
                     }
@@ -100,7 +104,8 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvDaya1.text = this.value.toString().plus(" A")
+                                val decimalFormat = "%.2f".format(snapshot.value.toString().toDouble())
+                                tvDaya1.text = decimalFormat
                             }
                         }
                     }
@@ -116,7 +121,8 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvDaya2.text = this.value.toString().plus(" V")
+                                val decimalFormat = "%.2f".format(snapshot.value.toString().toDouble())
+                                tvDaya2.text = decimalFormat
                             }
                         }
                     }
@@ -132,7 +138,8 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvDaya3.text = this.value.toString().plus(" W")
+                                val decimalFormat = "%.2f".format(snapshot.value.toString().toDouble())
+                                tvDaya3.text = decimalFormat
                             }
                         }
                     }
@@ -151,7 +158,8 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvTegangan1.text = this.value.toString().plus(" A")
+                                val decimalFormat = "%.2f".format(snapshot.value.toString().toDouble())
+                                tvTegangan1.text = decimalFormat
                             }
                         }
                     }
@@ -167,7 +175,8 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvTegangan2.text = this.value.toString().plus(" V")
+                                val decimalFormat = "%.2f".format(snapshot.value.toString().toDouble())
+                                tvTegangan2.text = decimalFormat
                             }
                         }
                     }
@@ -183,7 +192,8 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                tvTegangan3.text = this.value.toString().plus(" W")
+                                val decimalFormat = "%.2f".format(snapshot.value.toString().toDouble())
+                                tvTegangan3.text = decimalFormat
                             }
                         }
 
@@ -205,12 +215,13 @@ class HomeFragment : Fragment() {
     private fun getPersentaseKetidakSeimbangan() {
         databaseReference.apply {
 
-            child("persentase_ketidakseimbangan").child("fasa-1-R")
+            child("persentase_ketidakseimbangan").child("fasa-RST")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         binding?.apply {
                             snapshot.apply {
-                                binding?.progressFasa1R?.setProgress(value.toString().toInt())
+                                binding?.progressFasaRST?.setProgress(value.toString().toInt())
+                                binding?.numberPersentase?.text = value.toString().plus(" %")
                             }
                         }
                     }
@@ -221,38 +232,6 @@ class HomeFragment : Fragment() {
 
                 })
 
-            child("persentase_ketidakseimbangan").child("fasa-2-S")
-                .addValueEventListener(object : ValueEventListener {
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        binding?.apply {
-                            snapshot.apply {
-                                binding?.progressFasa2S?.setProgress(value.toString().toInt())
-                            }
-                        }
-                    }
-
-                    override fun onCancelled(error: DatabaseError) {
-
-                    }
-
-                })
-
-            child("persentase_ketidakseimbangan").child("fasa-3-T")
-                .addValueEventListener(object : ValueEventListener {
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        binding?.apply {
-                            snapshot.apply {
-                                binding?.progressFasa3T?.setProgress(value.toString().toInt())
-                            }
-                        }
-                    }
-
-                    override fun onCancelled(error: DatabaseError) {
-
-
-                    }
-
-                })
 
 // =================================================================================================
         }
